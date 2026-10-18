@@ -1,0 +1,103 @@
+TechVista Solutions — New Employee Onboarding Guide
+
+Welcome to TechVista Solutions! This guide will help you navigate your first weeks and set you up for success.
+
+Before Your First Day
+
+Your hiring manager and the People Operations team will ensure the following are ready before you arrive:
+- Laptop and equipment shipped or available at the office
+- Company email account created (firstname.lastname@techvista.com)
+- Slack workspace invitation sent
+- Building access badge prepared (for office employees)
+- Welcome package shipped to your home address
+
+First Day Checklist
+
+Morning (9:00 AM — 12:00 PM):
+1. Arrive at the office or log in remotely. Your manager will greet you.
+2. Complete new hire paperwork with People Operations (tax forms, emergency contacts, benefits enrollment)
+3. IT setup session: Configure your laptop, install required software, set up VPN, and enroll in multi-factor authentication (MFA)
+4. Receive access to core tools: Slack, email, Google Workspace, Confluence, JIRA, and GitHub
+
+Afternoon (1:00 PM — 5:00 PM):
+5. Welcome lunch with your team (in-person or virtual)
+6. Tour of the office (or virtual office tour for remote employees)
+7. One-on-one with your manager: Discuss role expectations, team structure, and initial goals
+8. Begin reviewing team documentation on Confluence
+
+Required Training (Complete Within First 2 Weeks)
+
+All new employees must complete the following training modules through our learning management system:
+
+1. Security Awareness Training (2 hours) — Covers data protection, phishing prevention, password policies, and incident reporting. Must be completed within the first 3 business days.
+2. Harassment Prevention Training (1.5 hours) — Covers TechVista's zero-tolerance policy, recognizing inappropriate behavior, and reporting procedures.
+3. Compliance and Ethics Training (1 hour) — Covers our code of conduct, conflict of interest policies, and regulatory obligations.
+4. Tool-Specific Training — Based on your role, you may need additional training on tools like JIRA, Confluence, GitHub, AWS, or Salesforce. Your manager will specify which are required.
+
+IT Systems and Access
+
+Core tools you will use daily:
+- Slack: Primary communication platform. Join #general, #engineering (or your department channel), and #random.
+- Google Workspace: Email, Calendar, Drive, and Docs. All company documents are stored in shared Google Drive folders.
+- JIRA: Project management and issue tracking. Your team lead will add you to the relevant project boards.
+- Confluence: Internal wiki and documentation. Start with the "New Employee" space for helpful resources.
+- GitHub: Source code repository. Your engineering lead will grant you access to relevant repositories.
+- VPN: Required for accessing internal services when working remotely. Use the Cisco AnyConnect client with your company credentials.
+
+Meet Your Team — First Week
+
+Your manager will schedule the following meetings during your first week:
+- 1:1 with each team member (30 minutes each)
+- Team standup introduction
+- Department overview meeting with your department head
+- Cross-functional introductions with key stakeholders you will work with regularly
+
+Buddy Program
+
+Every new hire is assigned a buddy — an experienced team member from a different team. Your buddy is your go-to person for questions about company culture, navigating internal processes, and finding resources. Buddy assignments last 90 days. You will meet with your buddy at least once per week during your first month.
+
+30/60/90 Day Milestones
+
+First 30 Days — Learn:
+- Complete all required training
+- Understand team processes, tools, and workflows
+- Review key project documentation and codebase (if engineering)
+- Shadow team members on their daily work
+- Deliver your first small task or contribution
+
+Days 31-60 — Contribute:
+- Take ownership of assigned tasks independently
+- Participate actively in team meetings and planning sessions
+- Begin contributing to code reviews or project deliverables
+- Identify one area for process improvement and discuss with your manager
+
+Days 61-90 — Own:
+- Take full ownership of your area of responsibility
+- Complete a meaningful project or feature independently
+- Participate in your first quarterly performance review
+- Set goals for the next quarter with your manager
+- Provide feedback on the onboarding process to help us improve
+
+Expense Reporting
+
+For business expenses, use our expense management system (Expensify). Common reimbursable expenses include:
+- Business travel (flights, hotels, meals)
+- Client entertainment (with pre-approval)
+- Professional development (books, courses, conferences)
+- Home office equipment (up to $500 one-time stipend)
+
+Submit expense reports within 30 days. Receipts are required for expenses over $25.
+
+Emergency Information
+
+- Office emergency contact: Security desk at ext. 100 or (555) 123-4567
+- IT helpdesk: Slack #it-support or helpdesk@techvista.com (response within 2 hours during business hours)
+- HR emergencies: hr@techvista.com or call (555) 123-4568
+- Building evacuation assembly point: Main parking lot, Section A
+
+Key Contacts
+
+- People Operations: people-ops@techvista.com
+- IT Support: helpdesk@techvista.com or #it-support on Slack
+- Facilities: facilities@techvista.com
+- Payroll questions: payroll@techvista.com

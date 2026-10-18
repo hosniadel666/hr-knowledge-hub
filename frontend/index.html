@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Knowledge Hub — TechVista Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="#4F46E5"/>
+                        <path d="M10 11h12M10 16h12M10 21h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <h1>HR Knowledge Hub</h1>
+                        <p class="subtitle">TechVista Solutions — Ask anything about our policies</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <div class="welcome-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="24" fill="#EEF2FF"/>
+                        <path d="M16 20h16M16 26h10" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2>Welcome to the HR Knowledge Hub</h2>
+                <p>I can answer questions about company policies, benefits, leave, onboarding, and more. Try asking:</p>
+                <div class="suggestions">
+                    <button class="suggestion" onclick="askSuggestion(this)">How many PTO days do new employees get?</button>
+                    <button class="suggestion" onclick="askSuggestion(this)">Does TechVista match 401(k) contributions?</button>
+                    <button class="suggestion" onclick="askSuggestion(this)">What training is required in the first week?</button>
+                    <button class="suggestion" onclick="askSuggestion(this)">What is the remote work policy?</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <form id="queryForm" class="input-form">
+                <input
+                    type="text"
+                    id="queryInput"
+                    placeholder="Ask about HR policies, benefits, leave, onboarding..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="sendButton" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10l14-7-4 7 4 7L3 10z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </form>
+            <p class="disclaimer">Powered by Amazon Bedrock RAG — Answers are generated from company policy documents.</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
