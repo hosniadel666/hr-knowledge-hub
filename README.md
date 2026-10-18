@@ -6,16 +6,17 @@ An intelligent knowledge assistant for employees and HR teams, powered by **Amaz
 
 ```mermaid
 graph TB
-    User([User]) --> CloudFront[CloudFront CDN]
+    User([User]) -->|HTTPS| CloudFront[CloudFront CDN]
     CloudFront --> S3_FE[S3 - Frontend]
-    User --> APIGW[API Gateway HTTP]
+    S3_FE -->|"app.js calls API"| APIGW[API Gateway HTTP]
     APIGW --> Lambda[Lambda - Python]
-    Lambda --> Bedrock[Bedrock RetrieveAndGenerate]
+    Lambda -->|RetrieveAndGenerate| Bedrock[Amazon Bedrock]
     Bedrock --> KB[Knowledge Base]
     KB --> Titan[Titan Embeddings V2]
     KB --> AOSS[OpenSearch Serverless]
     KB --> S3_Docs[S3 - HR Documents]
 
+    style User fill:#232F3E,color:#fff
     style CloudFront fill:#FF9900,color:#fff
     style S3_FE fill:#569A31,color:#fff
     style APIGW fill:#FF4F8B,color:#fff
@@ -31,9 +32,9 @@ graph TB
 
 1. HR policy documents are stored in **S3** and ingested into the **Bedrock Knowledge Base**
 2. Documents are chunked, embedded using **Amazon Titan Embeddings V2**, and stored in **OpenSearch Serverless**
-3. Users ask questions through a **CloudFront**-hosted chat UI
-4. Questions are sent to **API Gateway** → **Lambda**, which calls Bedrock's **RetrieveAndGenerate** API
-5. Bedrock retrieves relevant document chunks, passes them to **Claude 3 Haiku** for answer generation
+3. Users ask questions through a **CloudFront**-hosted chat UI (served from S3)
+4. The frontend sends requests to **API Gateway** → **Lambda**, which calls Bedrock's **RetrieveAndGenerate** API
+5. Bedrock retrieves relevant document chunks, passes them to **Claude Haiku 4.5** for answer generation
 6. The answer with source citations is returned to the user
 
 ## Tech Stack
@@ -42,7 +43,7 @@ graph TB
 |-------|-----------|
 | **IaC** | Terraform (~>5.0) |
 | **Embedding** | Amazon Titan Embeddings V2 |
-| **LLM** | Anthropic Claude 3 Haiku (via Bedrock) |
+| **LLM** | Anthropic Claude Haiku 4.5 (via Bedrock) |
 | **Vector Store** | OpenSearch Serverless (VECTORSEARCH) |
 | **Knowledge Base** | Amazon Bedrock Knowledge Bases |
 | **Backend** | AWS Lambda (Python 3.12) |
@@ -98,7 +99,7 @@ hr-knowledge-hub/
 - **AWS CLI** configured with credentials
 - **Bedrock model access** enabled for:
   - Amazon Titan Embeddings V2 (`amazon.titan-embed-text-v2:0`)
-  - Anthropic Claude 3 Haiku (`anthropic.claude-3-haiku-20240307-v1:0`)
+  - Anthropic Claude Haiku 4.5 (`anthropic.claude-haiku-4-5-20251001-v1:0`)
 
 > **Enable model access**: Go to [AWS Console → Bedrock → Model access](https://console.aws.amazon.com/bedrock/home#/modelaccess) and request access for both models.
 
@@ -154,7 +155,7 @@ open "$(terraform output -raw cloudfront_url)"
                                                       │
                     ┌──────────────────┐     ┌───────▼───────────┐
                     │  Generate Answer  │◀────│  Retrieve Top-K   │
-                    │  (Claude Haiku)   │     │  (OpenSearch)     │
+                    │  (Claude Haiku 4.5)   │     │  (OpenSearch)     │
                     └────────┬─────────┘     └───────────────────┘
                              │
                     ┌────────▼─────────┐
@@ -174,7 +175,7 @@ open "$(terraform output -raw cloudfront_url)"
 |---------|-------------|
 | OpenSearch Serverless (2 OCUs) | ~$350 |
 | Bedrock Embeddings (Titan V2) | ~$0.02/1M tokens |
-| Bedrock Generation (Claude Haiku) | ~$0.25-1.25/1M tokens |
+| Bedrock Generation (Claude Haiku 4.5) | ~$0.25-1.25/1M tokens |
 | Lambda | < $1 (demo traffic) |
 | API Gateway | < $1 (demo traffic) |
 | S3 + CloudFront | < $1 |
